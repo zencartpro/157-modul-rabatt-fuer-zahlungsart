@@ -6,7 +6,7 @@
  * Zen Cart German Version - www.zen-cart-pro.at
  * @copyright Portions Copyright 2003 osCommerce
  * @license https://www.zen-cart-pro.at/license/3_0.txt GNU General Public License V3.0
- * @version $Id: ot_payment_method_discount.php 2022-10-26 14:21:16Z webchills $
+ * @version $Id: ot_payment_method_discount.php 2022-11-13 19:21:16Z webchills $
  */
  
 
@@ -56,7 +56,7 @@ if (!defined('MODULE_ORDER_TOTAL_PAYMENT_METHOD_DISCOUNT_SHIPPING')) define('MOD
             $pass = false; break;
         }
 
-        if (($pass == true) && in_array($_SESSION['payment'], $this->payment_modules)) {
+        if (($pass == true) &&  (isset($_SESSION['payment']) && in_array($_SESSION['payment'], $this->payment_modules))) {
           $charge_it = 'true';
           if ($charge_it == 'true') {           
                        
